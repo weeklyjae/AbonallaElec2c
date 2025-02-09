@@ -15,9 +15,8 @@ function App() {
 export default App;
 
 function Pizza(props) {
-  const isSoldout = props.soldOut = "true" ? "sold-out" : 
   return (
-    <div className={`pizza ${props.soldOut = "true" ? "sold-out" : ""}`}>
+    <div className={`pizza ${(props.soldOut = "true" ? "sold-out" : "")}`}>
       <img src={props.photoName} alt={props.name} className="" />
       <div>
         <h3>{props.name}</h3>

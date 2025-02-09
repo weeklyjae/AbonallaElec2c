@@ -1,0 +1,88 @@
+
+
+/* NAVIGATION BAR */
+
+.minavbar {
+  height: 56px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  font-weight: 350;
+  max-width: 1500px;
+}
+
+.milogo img {
+  width: 30px;
+  margin-bottom: 0;
+
+}
+
+.milogo {
+  height: 30px;
+  padding: 0 16px;
+}
+
+.minavbar ul {
+  list-style-type: none;
+  display: flex;
+  height: inherit;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.minavbar li {
+  align-items: center;
+  padding: 0 20px;
+  color:#ff6900;
+  display: flex;
+  border-bottom: 3px solid transparent;
+}
+
+.minavbar li:hover {
+  border-bottom: 3px solid #ff6900;
+  cursor:pointer;   
+  width: fit-content;
+}
+
+.minavbar li:hover a{
+  color:#ff6900; 
+  text-decoration:none; 
+  cursor:pointer;  
+}
+
+a {
+  color: #191919;
+  text-decoration: none;
+}
+
+.navbar-separator {
+  flex-grow: 1;
+}
+
+.search-icon {
+  height: 27px;
+  padding: 0 16px;
+}
+
+.search-icon img {
+  height: 20px;
+  width: 20px;
+}
+
+
+/* MAIN CONTENT */
+
+
+.featuredprod {
+  margin: 120px;
+  max-width: 1500px;
+  display: flex;
+  align-items: center;
+}
+
+.featuredprod h3{
+  font-weight: 500;
+  font-size: 30px;
+  text-align: center;
+}

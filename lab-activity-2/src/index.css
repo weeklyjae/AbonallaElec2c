@@ -1,0 +1,13 @@
+
+
+@font-face {
+  font-family: "MiSans Latin VF";
+  src: local("MiSans Latin VF") url("./fonts/MiSansLatin.ttf") format("truetype");
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "MiSans Latin VF";
+}
