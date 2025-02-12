@@ -161,15 +161,15 @@ function getMovie(id) {
 
 // // console.log(movies)
 // // ... = rest operator
-// const movieNine = getMovie(9);
-// const {title, description, genre , ...others} = movieNine;
+const movieNine = getMovie(9);
+const {title, description, genre , ...others} = movieNine;
 
 // // console.log(others)
 
 // // array destructuring
-// const [one, ...etc] = movieNine.cast;
-// // console.log(title, description, genre, one);
-// // console.log(etc)
+const [one, ...etc] = movieNine.cast;
+console.log(title, description, genre, one);
+console.log(etc)
 
 // const numbers = [ 1, 2, 3 ];
 // const nambur = [ 4, 5 ,6 ];
@@ -214,7 +214,7 @@ const movies = getMovies();
 
 // filter movies per year
 const newMovie = movies.filter(m => m.releaseYear >= 2000);
-console.log(newMovie)
+// console.log(newMovie)
 const sortedByYear = movies.sort(m => m.releaseYear);
 
-console.log(sortedByYear)
+// console.log(sortedByYear)
