@@ -68,10 +68,7 @@ function FeaturedProducts() {
         </div>
         <div className="fpdivdevices">
           {devices.map((product, index) => {
-            // Define a variable for conditional styling
             let productStyle = {};
-
-            // Switch case for different product types
             switch (product.type) {
               case "Phone":
                 productStyle = { backgroundColor: "#ffd6bb", border: "3px solid #ff6900" };
@@ -83,7 +80,7 @@ function FeaturedProducts() {
                 productStyle = { backgroundColor: "#d6e0ff", border: "3px solid #0033ff" };
                 break;
               default:
-                productStyle = { backgroundColor: "#f0f0f0", border: "3px solid #ccc" }; // Default style
+                productStyle = { backgroundColor: "#f0f0f0", border: "3px solid #ccc" }; 
             }
 
             return (
