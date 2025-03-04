@@ -4,6 +4,7 @@ import './App.css'
 import './fonts/MiSansLatin.ttf'
 import MiCarousel from './components/MiCarousel';
 import supportItems from "./components/SupportItems"; 
+import devices from "./components/Devices";
 
 function App() {
 
@@ -56,36 +57,52 @@ function FeaturedProducts() {
     <section className='featuredprod'>
       <h3>Featured Products</h3>
       <ul>
-        <li><a href='' style={{color:"#ff6900", borderBottom: "3px solid #ff6900", fontWeight:"bold"}}>Latest Flagship</a></li>
+        <li><a href='' style={{ color: "#ff6900", borderBottom: "3px solid #ff6900", fontWeight: "bold" }}>Latest Flagship</a></li>
         <li><a href=''>Stay on Trend</a></li>
         <li><a href=''>Home Upgrade</a></li>
         <li><a href=''>Smart Security</a></li>
       </ul>
       <div className='fpdiv'>
         <div className='fpbanner'>
-          <img src='banner1.jpg' alt="Banner"></img>
+          <img src='banner1.jpg' alt="Banner" />
         </div>
         <div className="fpdivdevices">
-          {[
-            { src: "xiaomi14t.png", name: "Xiaomi 14T", desc: "Sony's IMX906 image sensor" },
-            { src: "xiaomi14.png", name: "Xiaomi 14", desc: "Lens to legend" },
-            { src: "smartband9pro.png", name: "Xiaomi Smart Band 9 Pro", desc: "Your style, your pace" },
-            { src: "buds5.png", name: "Xiaomi Buds 5", desc: "Pure sound, pure comfort" }
-          ].map((product, index) => (
-            <div className="product-item" key={index}>
-              <div className="product-image-container">
-                <img src={product.src} alt={product.name} className="product-img" />
+          {devices.map((product, index) => {
+            // Define a variable for conditional styling
+            let productStyle = {};
+
+            // Switch case for different product types
+            switch (product.type) {
+              case "Phone":
+                productStyle = { backgroundColor: "#ffd6bb", border: "3px solid #ff6900" };
+                break;
+              case "Wearable":
+                productStyle = { backgroundColor: "#bbffbb", border: "3px solid #00a100" };
+                break;
+              case "SmartHome":
+                productStyle = { backgroundColor: "#d6e0ff", border: "3px solid #0033ff" };
+                break;
+              default:
+                productStyle = { backgroundColor: "#f0f0f0", border: "3px solid #ccc" }; // Default style
+            }
+
+            return (
+              <div className="product-item" key={index} style={productStyle}>
+                <div className="product-image-container">
+                  <img src={product.src} alt={product.name} className="product-img" />
+                </div>
+                <h4>{product.name}</h4>
+                <p className="product-desc">{product.desc}</p>
+                <button className="learn-more">Learn More</button>
               </div>
-              <h4>{product.name}</h4>
-              <p className="product-desc">{product.desc}</p>
-              <button className="learn-more">Learn More</button>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
   );
 }
+
 
 function MiSupport() {
   return (

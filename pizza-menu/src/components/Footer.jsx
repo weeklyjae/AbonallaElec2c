@@ -1,28 +1,25 @@
+import Order from "./Order";
+
 function Footer() {
     const hour = new Date().getHours();
     const openHour = 10;
     const closeHour = 22;
-    const isOpen = hour >= openHour && hour <= closeHour
-  
-    const order = {
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      gap:  "2.4rem",
-    }
+    const isOpen = hour >= openHour && hour <= closeHour;
+
+    // console.log(true && "hello"); //second one will show if the 1st one is true 
+    // console.log(true || "hello"); //first one will show if the first one is true
+    // console.log(true ?? "hello"); //first one will show if the first one is true
   
     return (
       <footer className="footer">
-        <div className="order">
+        {isOpen ? (
+          <Order closeHour={closeHour} />
+        ) : (
           <p>
-            {new Date().toLocaleTimeString()}. We&apos;re currently {" "}
-            {isOpen ? "Open" : "Close" }
+            We&apos;re happy to welcome you between {openHour}:00 to {closeHour}:00
           </p>
-          <button className="btn" style={order}>
-            Order now
-          </button>
-        </div>
-      </footer  >
+        )}
+      </footer>
     );
   }
 

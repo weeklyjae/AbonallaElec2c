@@ -1,11 +1,14 @@
+/* eslint-disable react/prop-types */
 
-function Pizza(props) {
-    return (
-      <div className={`pizza ${(props.pizzaObj.soldOut)}`}>
-        <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />
+function Pizza({pizzaObj}) {
+    return pizzaObj.soldOut ? (
+        ""
+      ) : (
+      <div className={`pizza ${(pizzaObj.soldOut)}`}>
+        <img src={pizzaObj.photoName} alt={pizzaObj.name} />
         <span>
-          <h3>{props.pizzaObj.name} </h3>
-          <p>{props.pizzaObj.ingredients}</p>        
+          <h3>{pizzaObj.name} </h3>
+          <p>{pizzaObj.ingredients}</p>        
         </span>
       </div>
     );
