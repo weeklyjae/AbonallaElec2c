@@ -154,9 +154,11 @@ a {
 
 .fpdivdevices {
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  margin: 0;
+  flex-wrap: wrap; 
+  gap: 20px; 
+  justify-content: center; 
+  margin: 0 auto;
+  max-width: 1400px; 
 }
 
 .product-item {
@@ -173,6 +175,8 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex: 1 1 calc(25% - 20px); 
+  max-width: 340px; 
 }
 
 .product-image-container {
@@ -236,6 +240,19 @@ a {
   transform: translate(-50%, -40%);
 }
 
+.new-label {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff6900;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 15px;
+  text-transform: uppercase;
+}
+
 .mi-support {
   text-align: center;
   padding: 20px;
@@ -252,7 +269,7 @@ a {
 .support-container {
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Ensures text aligns properly */
+  align-items: flex-start; 
   gap: 80px; 
 }
 
